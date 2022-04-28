@@ -12,7 +12,7 @@
     <form action="" method="POST">
         Type alphabet: <input type="text" name="alphabet" value="<?php if (isset($_POST['alphabet']) && !empty($_POST['alphabet'])) {
                                                                         echo $_POST['alphabet'];
-                                                                    } ?>"  >
+                                                                    } ?>">
         <button type="submit" name="submit">Ok</button>
     </form><br>
     <?php include 'handle.php'?>
