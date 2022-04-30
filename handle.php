@@ -14,6 +14,8 @@ if (isset($_POST['submit'])) {
     //     echo "not allowed";
     // }
     
+
+    
     // Declare an empty array
     $array = array();
 
@@ -21,9 +23,8 @@ if (isset($_POST['submit'])) {
     // into characters and store
     // it into variables
     for ($i = 65; $i < 91; $i++) {
-        $array[$alphabet] = chr($i);
+        $array[] = chr($i);
     }
-    
 
     // Loop to display the array elements
     foreach ($array as $alphabet => $v) {
