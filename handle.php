@@ -1,37 +1,13 @@
 <?php
 if (isset($_POST['submit'])) {
     $alphabet = $_POST['alphabet'];
-    // $upperArr = range('A', 'Z');
-    // $lowerArr = range('a', 'z');
-
-    // if (ctype_upper($alphabet)) {
-    //     echo 'Position of ' . $alphabet .' is:' . (array_search($alphabet, $upperArr) + 1);
-    // } 
-    // elseif(ctype_lower($alphabet)) {
-    //     echo 'Position of ' . $alphabet .' is:' . (array_search($alphabet, $lowerArr) + 1);
-    // }
-    // else{
-    //     echo "not allowed";
-    // }
-    
-
-    
-    // Declare an empty array
-    $array = array();
-
-    // Loop to convert ASCII value
-    // into characters and store
-    // it into variables
-    for ($i = 65; $i < 91; $i++) {
-        $array[] = chr($i);
+    $alphabet_length = strlen($alphabet);
+    for ($i = 0; $i < $alphabet_length; $i++) {
+        $ascii_value =  ord(strtoupper($alphabet[$i]));
+        if ($ascii_value > 64 && $ascii_value < 91) {
+            echo "The position of " . $alphabet[$i] . " is: " . $ascii_value . "<br><br>";
+        } else {
+            echo "not allowed<br><br>";
+        }
     }
-
-    // Loop to display the array elements
-    foreach ($array as $alphabet => $v) {
-
-        // Display the key and its
-        // value of an array 
-        echo $alphabet . " => " . $v . ", ";
-    }
-
 }
